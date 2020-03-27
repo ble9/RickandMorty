@@ -1,0 +1,13 @@
+<div class="card">
+  <img [src]="character.image" class="card-img-top" [alt]="character.name">
+  <div class="card-body">
+    <h5 class="card-title">{{ character.name}}</h5>
+    <ul>
+      <li>Species: {{ character.species}} </li>
+      <li>Location: {{ character.location.name}} </li>
+      <li>Created: {{ character.created | date | lowercase}} </li>
+    </ul>
+    Selected: <input type="checkbox" [(ngModel)]="selected" (ngModelChange)="selectedChanged()"/>
+    <button class="btn btn-primary" [routerLink]="['/character', character.id]">More Details</button>
+  </div>
+</div>
